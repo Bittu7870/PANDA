@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { toast } from "react-toastify";
 import STAR from "../../assets/Union.svg";
 
 const SignUp = ({ currentTab }) => {
@@ -38,13 +39,26 @@ const SignUp = ({ currentTab }) => {
     } else if (conformPassword !== password) {
       errors.conformPassword = "Passwords do not match.";
     }
+    const storedUserData = JSON.parse(localStorage.getItem("userData"));
+    if (storedUserData && storedUserData.email === email) {
+      errors.email = (
+        <>
+          This email address already exists.{" "}
+          <span className="underline" onClick={() => currentTab("Sign in")}>
+            Sign in
+          </span>
+        </>
+      );
+    }
     setFormErrors(errors);
 
+    // Check if email is already registered
     if (Object.keys(errors).length === 0) {
       const userData = { email, password };
       localStorage.setItem("userData", JSON.stringify(userData));
       console.log("formData:", email, password, conformPassword);
       currentTab("Sign in");
+      toast.success("Sign up Successfully");
     }
   };
   return (
@@ -73,7 +87,7 @@ const SignUp = ({ currentTab }) => {
                 value={email}
                 placeholder="Email"
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full border-b-2 p-3 mt-2 focus:outline-none focus:border-[#A95454] transition-all duration-300"
+                className="w-full border-b-2 p-3 mt-2 focus:outline-none text-yellow-500 focus:border-[#A95454] transition-all duration-300"
               />
               <span className="text-gray-400 block text-left mt-1">
                 {formErrors.email}
@@ -88,7 +102,7 @@ const SignUp = ({ currentTab }) => {
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full border-b-2 p-3 mt-2 focus:outline-none focus:border-[#A95454] transition-all duration-300"
+                className="w-full border-b-2 p-3 mt-2 focus:outline-none text-red-600 focus:border-[#A95454] transition-all duration-300"
               />
               <p
                 className="absolute top-3 right-4 cursor-pointer hover:border-b-[3px] font-bold"
@@ -109,7 +123,7 @@ const SignUp = ({ currentTab }) => {
                 value={conformPassword}
                 placeholder="Confirm Password"
                 onChange={(e) => setConformPassword(e.target.value)}
-                className="w-full border-b-2 p-3 mt-2 focus:outline-none focus:border-[#A95454] transition-all duration-300"
+                className="w-full border-b-2 p-3 mt-2 focus:outline-none text-red-600  focus:border-[#A95454] transition-all duration-300"
               />
               <p
                 className="absolute top-3 right-4 cursor-pointer hover:border-b-[3px] font-bold"

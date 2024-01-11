@@ -20,13 +20,13 @@ const SignIn = () => {
 
     // Validate email
     if (!email) {
-      errors.email = "Please enter a valid email address.";
+      errors.email = "This email address is invalid.";
     }
 
     // Validate password
 
     if (!password) {
-      errors.password = "Enter a valid password";
+      errors.password = "Wrong password, please try again.";
     }
 
     setFormErrors(errors);
@@ -66,7 +66,7 @@ const SignIn = () => {
                 value={email}
                 placeholder="Email"
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full border-b-2 p-3 mt-2 focus:outline-none focus:border-[#A95454] transition-all duration-300"
+                className="w-full border-b-2 p-3 mt-2 focus:outline-none text-yellow-500 focus:border-[#A95454] transition-all duration-300"
               />
               <span className="text-gray-400 block text-left mt-1">
                 {formErrors.email}
@@ -81,7 +81,7 @@ const SignIn = () => {
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full border-b-2 p-3 mt-2 focus:outline-none focus:border-[#A95454] transition-all duration-300"
+                className="w-full border-b-2 p-3 mt-2 focus:outline-none text-yellow-500 focus:border-[#A95454] transition-all duration-300"
               />
               <p
                 className="absolute top-3 right-4 cursor-pointer hover:border-b-[3px] font-bold"
