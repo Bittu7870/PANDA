@@ -1,7 +1,117 @@
-
+import { useState } from "react";
+import IMG from "../../assets/group-afro-americans-working-together.png";
+import STAR from "../../assets/Union.svg";
+import { useNavigate } from "react-router";
 
 const ForgotPassword = () => {
-  return <div>Forgot password?</div>;
+  const TabName = ["Join PANDA", "Sign in"];
+  const [email, setEmail] = useState("");
+  const [formErrors, setFormErrors] = useState({});
+  const [emailSent, setEmailSent] = useState(false);
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const errors = {};
+
+    // Validate email
+    if (!email) {
+      errors.email =
+        "Please enter your login email address to receive your password reset link.";
+    }
+
+    setFormErrors(errors);
+
+    if (Object.keys(errors).length === 0) {
+      setEmailSent(true);
+    }
+  };
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 h-screen overflow-hidden ">
+      {/* Left Section */}
+      <div className="relative h-full">
+        <img
+          src={IMG}
+          alt="img"
+          className="object-cover w-full h-full sm:h-auto"
+        />
+        <h1 className="absolute top-8 left-5 text-5xl font-bold text-white">
+          Welcome to Panda
+        </h1>
+      </div>
+
+      {/* Right Section */}
+      <div className="flex flex-col justify-center items-center h-full">
+        {/* Navigation */}
+        <div className="flex gap-4 mb-8 text-center items-center border-b-2 border-[#E0E0E0] mt-5 ">
+          {TabName.map((tab, index) => (
+            <div key={index} className="flex">
+              <p
+                className={`text-black text-2xl font-sans pb-4 cursor-pointer`}
+                onClick={() => {
+                  
+                  navigate("/");
+                }}
+              >
+                {tab}
+              </p>
+              {index !== TabName.length - 1 && (
+                <p className="text-gray-500 text-2xl font-sans pb-4 px-6">or</p>
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* Forget password */}
+        <form onSubmit={handleSubmit}>
+          <div className="flex justify-center items-center p-3 w-full sm:w-[800px]">
+            <div className="items-center text-center w-full sm:w-[680px] sm:h-[570px] border rounded-t-full px-8 py-24">
+              <div className="flex justify-center items-center mt-8 mb-8">
+                <img src={STAR} alt="starIMG" className="w-12" />
+              </div>
+              <div className="mb-16  ">
+                <p className="text-5xl font-bold">Forgot password</p>
+              </div>
+
+              {/* Email Input */}
+              <div className="mb-4">
+                <input
+                  type="email"
+                  name="email"
+                  value={email}
+                  placeholder="Email address"
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full border-b-2 p-3 mt-2 focus:outline-none text-yellow-500 focus:border-[#A95454] transition-all duration-300"
+                />
+                <span className="text-gray-400 block mt-4 text-left">
+                  {formErrors.email}
+                  {emailSent && (
+                    <>
+                      Your password reset link has been sent to your email
+                      address. Check your email and click on the link to reset
+                      your password.
+                    </>
+                  )}
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div className="items-center text-center">
+            <p className="mt-8 text-gray-500">
+              {!emailSent ? "" : "Didn’t get the password reset link?"}
+            </p>
+            <button
+              type="submit"
+              className="py-4 px-12 text-xl mt-6 mb-6 border hover:text-white hover:bg-[#A95454] transition-all duration-300 rounded-full"
+            >
+              {!emailSent ? "Get the link" : "Resend Email"}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
 };
 
 export default ForgotPassword;
