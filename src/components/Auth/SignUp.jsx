@@ -137,7 +137,8 @@ const SignUp = ({ currentTab }) => {
             </div>
           </div>
         </div>
-
+        
+        {/* Terms */}
         <div className="items-center text-center">
           <div className="flex flex-col gap-3 mt-3 mb-3 items-center">
             <div className="flex items-center -ml-36 gap-3">

@@ -27,7 +27,7 @@ const ForgotPassword = () => {
     }
   };
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 h-screen overflow-hidden ">
+    <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 h-screen">
       {/* Left Section */}
       <div className="relative h-full">
         <img
@@ -49,7 +49,6 @@ const ForgotPassword = () => {
               <p
                 className={`text-black text-2xl font-sans pb-4 cursor-pointer`}
                 onClick={() => {
-                  
                   navigate("/");
                 }}
               >
