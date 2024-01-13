@@ -44,7 +44,7 @@ const ResetPassword = () => {
     }
   };
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 h-screen">
+    <div className="grid grid-cols-1 bg-[#F5F1ED] overflow-auto sm:grid-cols-1 md:grid-cols-2 h-screen">
       {/* Left Section */}
       <div className="relative h-full">
         <img
@@ -97,7 +97,7 @@ const ResetPassword = () => {
                   placeholder="Enter new password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full border-b-2 p-3 mt-2 focus:outline-none text-red-600 focus:border-[#A95454] transition-all duration-300"
+                  className="w-full border-b-2 p-3 mt-2 focus:outline-none text-red-600 bg-[#F5F1ED] focus:border-[#A95454] transition-all duration-300"
                 />
                 <p
                   className="absolute top-3 right-4 cursor-pointer hover:border-b-[3px] font-bold"
@@ -118,7 +118,7 @@ const ResetPassword = () => {
                   value={conformPassword}
                   placeholder="Re-enter new password"
                   onChange={(e) => setConformPassword(e.target.value)}
-                  className="w-full border-b-2 p-3 mt-2 focus:outline-none text-red-600  focus:border-[#A95454] transition-all duration-300"
+                  className="w-full border-b-2 p-3 mt-2 focus:outline-none text-red-600 bg-[#F5F1ED] focus:border-[#A95454] transition-all duration-300"
                 />
                 <p
                   className="absolute top-3 right-4 cursor-pointer hover:border-b-[3px] font-bold"
@@ -141,14 +141,14 @@ const ResetPassword = () => {
             {!emailSent ? (
               <button
                 type="submit"
-                className="py-4 px-12 text-xl mt-6 mb-6 border hover:text-white hover:bg-[#A95454] transition-all duration-300 rounded-full"
+                className="py-4 px-12 text-xl mt-6 mb-6 border border-black hover:text-white hover:bg-[#A95454] transition-all duration-300 rounded-full"
               >
                 Reset My Password
               </button>
             ) : (
               <button
                 type="submit"
-                className="py-4 px-12 text-xl mt-6 mb-6 border hover:text-white hover:bg-[#A95454] transition-all duration-300 rounded-full"
+                className="py-4 px-12 text-xl mt-6 mb-6 border border-black hover:text-white hover:bg-[#A95454] transition-all duration-300 rounded-full"
                 onClick={() => navigate("/")}
               >
                 Sign in

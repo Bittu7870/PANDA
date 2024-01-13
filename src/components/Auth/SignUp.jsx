@@ -87,7 +87,7 @@ const SignUp = ({ currentTab }) => {
                 value={email}
                 placeholder="Email"
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full border-b-2 p-3 mt-2 focus:outline-none text-yellow-500 focus:border-[#A95454] transition-all duration-300"
+                className="w-full border-b-2 p-3 mt-2 bg-[#F5F1ED] focus:outline-none text-yellow-500 focus:border-[#A95454] transition-all duration-300"
               />
               <span className="text-gray-400 block text-left mt-1">
                 {formErrors.email}
@@ -102,7 +102,7 @@ const SignUp = ({ currentTab }) => {
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full border-b-2 p-3 mt-2 focus:outline-none text-red-600 focus:border-[#A95454] transition-all duration-300"
+                className="w-full border-b-2 p-3 mt-2 bg-[#F5F1ED] focus:outline-none text-red-600 focus:border-[#A95454] transition-all duration-300"
               />
               <p
                 className="absolute top-3 right-4 cursor-pointer hover:border-b-[3px] font-bold"
@@ -123,7 +123,7 @@ const SignUp = ({ currentTab }) => {
                 value={conformPassword}
                 placeholder="Confirm Password"
                 onChange={(e) => setConformPassword(e.target.value)}
-                className="w-full border-b-2 p-3 mt-2 focus:outline-none text-red-600  focus:border-[#A95454] transition-all duration-300"
+                className="w-full border-b-2 p-3 mt-2 bg-[#F5F1ED] focus:outline-none text-red-600  focus:border-[#A95454] transition-all duration-300"
               />
               <p
                 className="absolute top-3 right-4 cursor-pointer hover:border-b-[3px] font-bold"
@@ -137,7 +137,7 @@ const SignUp = ({ currentTab }) => {
             </div>
           </div>
         </div>
-        
+
         {/* Terms */}
         <div className="items-center text-center">
           <div className="flex flex-col gap-3 mt-3 mb-3 items-center">
@@ -146,7 +146,7 @@ const SignUp = ({ currentTab }) => {
                 id="checkbox"
                 type="checkbox"
                 style={{ width: "2em", height: "1.9em" }}
-                className="ml-1 cursor-pointer"
+                className="ml-1 cursor-pointer bg-[#F5F1ED]"
                 required
               />
               <label htmlFor="checkbox">
@@ -161,7 +161,7 @@ const SignUp = ({ currentTab }) => {
 
           <button
             type="submit"
-            className="py-4 px-8 text-xl mt-6 mb-6 border hover:text-white hover:bg-[#A95454] transition-all duration-300 rounded-full"
+            className="py-4 px-8 text-xl mt-6 mb-6 border border-black hover:text-white hover:bg-[#A95454] transition-all duration-300 rounded-full"
           >
             Join PANDA
           </button>

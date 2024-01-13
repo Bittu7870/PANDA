@@ -27,7 +27,7 @@ const ForgotPassword = () => {
     }
   };
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 h-screen">
+    <div className="grid grid-cols-1 bg-[#F5F1ED] sm:grid-cols-1 md:grid-cols-2 h-screen">
       {/* Left Section */}
       <div className="relative h-full">
         <img
@@ -80,7 +80,7 @@ const ForgotPassword = () => {
                   value={email}
                   placeholder="Email address"
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full border-b-2 p-3 mt-2 focus:outline-none text-yellow-500 focus:border-[#A95454] transition-all duration-300"
+                  className="w-full border-b-2 p-3 mt-2 focus:outline-none text-yellow-500 bg-[#F5F1ED] focus:border-[#A95454] transition-all duration-300"
                 />
                 <span className="text-gray-400 block mt-4 text-left">
                   {formErrors.email}

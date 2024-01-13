@@ -66,7 +66,7 @@ const SignIn = () => {
                 value={email}
                 placeholder="Email"
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full border-b-2 p-3 mt-2 focus:outline-none text-yellow-500 focus:border-[#A95454] transition-all duration-300"
+                className="w-full border-b-2 p-3 mt-2 bg-[#F5F1ED]  focus:outline-none text-yellow-500 focus:border-[#A95454] transition-all duration-300"
               />
               <span className="text-gray-400 block text-left mt-1">
                 {formErrors.email}
@@ -81,7 +81,7 @@ const SignIn = () => {
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full border-b-2 p-3 mt-2 focus:outline-none text-yellow-500 focus:border-[#A95454] transition-all duration-300"
+                className="w-full border-b-2 p-3 mt-2 bg-[#F5F1ED]  focus:outline-none text-yellow-500 focus:border-[#A95454] transition-all duration-300"
               />
               <p
                 className="absolute top-3 right-4 cursor-pointer hover:border-b-[3px] font-bold"
@@ -105,7 +105,7 @@ const SignIn = () => {
         <div className="items-center text-center">
           <button
             type="submit"
-            className="py-4 px-8 text-xl mt-6 mb-6 border hover:text-white hover:bg-[#A95454] transition-all duration-300 rounded-full"
+            className="py-4 px-8 text-xl mt-6 mb-6 border border-black hover:text-white hover:bg-[#A95454] transition-all duration-300 rounded-full"
           >
             Sign in
           </button>
