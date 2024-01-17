@@ -2,15 +2,21 @@ import { useState } from "react";
 import Logo from "../../assets/Group 2528.png";
 import { BsList } from "react-icons/bs";
 import { BiX } from "react-icons/bi";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { NavBarLinks } from "../../data/NavBarLinks";
 import Star from "../../assets/north-star-24.svg";
 
 const NavBar = () => {
   const [showSideBar, setShowSideBar] = useState(false);
+  const navigate = useNavigate();
 
   const handleToggleMenu = () => {
     setShowSideBar(!showSideBar);
+  };
+
+  const handleLogOut = () => {
+    localStorage.removeItem("userData");
+    navigate("/");
   };
   return (
     <div className="pb-16">
@@ -29,6 +35,14 @@ const NavBar = () => {
             </li>
             <li className="cursor-pointer underline ">
               <a href="#">Se connecter</a>
+            </li>
+            <li>
+              <button
+                onClick={handleLogOut}
+                className="px-4 border-2 rounded-full py-2"
+              >
+                LogOut
+              </button>
             </li>
           </ul>
         </div>

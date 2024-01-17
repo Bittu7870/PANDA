@@ -2,10 +2,16 @@ import ForgotPassword from "../components/Auth/ForgotPassword";
 import ResetPassword from "../components/Auth/ResetPassword";
 import RegisterPage from "../pages/Auth/RegisterPage";
 import Home from "../pages/Home/Home";
+import NoPage from "../pages/NoPage/NoPage";
+import PrivateRoute from "./PrivateRoute";
 import PublicRoute from "./PublicRoute";
 
 const CombineRoutes = () => {
   return [
+    {
+      path: "/*",
+      element: <PublicRoute component={NoPage} />,
+    },
     {
       path: "/",
       element: <PublicRoute component={RegisterPage} />,
@@ -20,7 +26,7 @@ const CombineRoutes = () => {
     },
     {
       path: "/home",
-      element: <PublicRoute component={Home} />,
+      element: <PrivateRoute component={Home} />,
     },
   ];
 };
