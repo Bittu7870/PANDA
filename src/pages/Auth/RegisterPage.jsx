@@ -8,7 +8,7 @@ const RegisterPage = () => {
   const [currentTab, setCurrentTab] = useState(TabName[0]);
 
   return (
-    <div className="grid grid-cols-1 bg-[#F5F1ED] m:grid-cols-1 md:grid-cols-2 h-screen">
+    <div className="grid grid-cols-1 bg-[#F5F1ED] m:grid-cols-1 md:grid-cols-2">
       {/* Left Section */}
       <div className="relative h-full">
         <img

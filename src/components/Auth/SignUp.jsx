@@ -62,10 +62,10 @@ const SignUp = ({ currentTab }) => {
     }
   };
   return (
-    <>
+    <div className="bg-[#F5F1ED]">
       <form onSubmit={handleSubmit}>
-        <div className="flex justify-center items-center p-3 w-full sm:w-[800px]">
-          <div className="items-center text-center w-full sm:w-[680px] sm:h-[570px] border rounded-t-full px-8 py-10 ">
+        <div className="flex justify-center items-center p-3 w-full sm:w-full md:w-[800px] lg:w-[800px] xl:w-[800px]">
+          <div className="items-center text-center w-full sm:w-full md:w-full lg:w-[680px] xl:w-[680px] sm:h-full md:h-[570px] lg:h-[570px] xl:h-[570px] border rounded-t-full px-8 py-10">
             <div className="flex justify-center items-center mt-8 mb-8">
               <img src={STAR} alt="starIMG" className="w-12" />
             </div>
@@ -123,7 +123,7 @@ const SignUp = ({ currentTab }) => {
                 value={conformPassword}
                 placeholder="Confirm Password"
                 onChange={(e) => setConformPassword(e.target.value)}
-                className="w-full border-b-2 p-3 mt-2 bg-[#F5F1ED] focus:outline-none text-red-600  focus:border-[#A95454] transition-all duration-300"
+                className="w-full border-b-2 p-3 mt-2 bg-[#F5F1ED] focus:outline-none text-red-600 focus:border-[#A95454] transition-all duration-300"
               />
               <p
                 className="absolute top-3 right-4 cursor-pointer hover:border-b-[3px] font-bold"
@@ -161,26 +161,27 @@ const SignUp = ({ currentTab }) => {
 
           <button
             type="submit"
-            className="py-4 px-8 text-xl mt-6 mb-6 border border-black hover:text-white hover:bg-[#A95454] transition-all duration-300 rounded-full"
+            className="py-4 px-8 text-xl mt-6 mb-6 border border-black rounded-full"
           >
             Join PANDA
           </button>
         </div>
+
+        {/* Terms of Use */}
+        <div className="bg-[#F5F1ED] w-full">
+          <p className="text-xl max-w-lg flex  items-center justify-center text-center m-auto text-gray-500">
+            By clicking on &quot;Create an account&quot;, you agree to our
+          </p>
+          <p className="text-xl text-gray-500 items-center text-center">
+            <a href="" className="underline">
+              terms of use
+            </a>{" "}
+            {""} {""}and <a className="underline">privacy policy</a>
+            {""}.
+          </p>
+        </div>
       </form>
-      {/* Terms of Use */}
-      <div>
-        <p className="text-xl max-w-lg flex m-3 items-center  text-gray-500">
-          By clicking on &quot;Create an account&quot;, you agree to our
-        </p>
-        <p className="text-xl text-gray-500 items-center text-center">
-          <a href="" className="underline">
-            terms of use
-          </a>{" "}
-          {""} {""}and <a className="underline">privacy policy</a>
-          {""}.
-        </p>
-      </div>
-    </>
+    </div>
   );
 };
 
